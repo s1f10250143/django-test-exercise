@@ -37,23 +37,23 @@
     <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
 </div>
 
+...
 {% for task in tasks %}
 <div class="text">
-<h2>{{ task.title }}</h2>
-<ul>
-<li>Posted at: {{ task.posted_at }}</li>
-{% if task.due_at %}
-<li>Due at: {{ task.due_at }}</li>
-{% endif %}
-{% if task.completed %}
-<li>Status: Completed</li>
-{% else %}
-<li>Status: Not Completed</li>
-{% endif %}
-</ul>
+    <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
+    <ul>
+        <li>Posted at: {{ task.posted_at }}</li>
+        {% if task.due_at %}
+        <li>Due at: {{ task.due_at }}</li>
+        {% endif %}
+        {% if task.completed %}
+        <li>Status: Completed</li>
+        {% else %}
+        <li>Status: Not Completed</li>
+        {% endif %}
+    </ul>
 </div>
 {% endfor %}
-
 </body>
 
 </html>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.utils.timezone import make_aware
 from django.utils.dateparse import parse_datetime
 from todo.models import Task
+from django.http import Http404
 
 
 def index(request):
